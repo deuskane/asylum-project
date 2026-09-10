@@ -21,9 +21,14 @@ SHELL            = /bin/bash
 
 COMPONENT        = $(CURDIR)/asylum-utils-generators/scripts/component.py
 
+DIR_IP           = $(CURDIR)
+DIR_CORES        = $(CURDIR)/../lib/asylum-cores
+
 #=============================================================================
 # Rules
 #=============================================================================
+
+.PHONY : component
 component :
 	(cd ./asylum-infrastructure_icn/hdl/            ; python $(COMPONENT) icn_pkg             --vhdl_path .)
 	(cd ./asylum-communication-spi/hdl/             ; python $(COMPONENT) spi_pkg             --vhdl_path .)
@@ -43,3 +48,15 @@ component :
 	(cd ./asylum-utils-generators/tools/regtool/hdl ; python $(COMPONENT) csr_pkg             --vhdl_path .)
 	(cd ./asylum-utils-pkg/hdl                      ; python $(COMPONENT) ft_pkg              --vhdl_path . --file_filter "ft_*")
 	(cd ./asylum-target-techmap/hdl/generic         ; python $(COMPONENT) techmap_pkg         --vhdl_path .)
+
+.PHONY : import_dry_run
+import_dry_run:
+	$(DIR_CORES)/import.sh -s $(DIR_IP) -d $(DIR_CORES)
+
+.PHONY : import
+import :
+	$(DIR_CORES)/import.sh -s $(DIR_IP) -d $(DIR_CORES) -r
+	cd $(DIR_CORES) && ./dump.sh)
+	cd $(DIR_CORES) && git add *)
+	cd $(DIR_CORES) && git commit -am "Update Cores");
+
