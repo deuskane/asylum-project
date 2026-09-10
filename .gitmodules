@@ -1,0 +1,60 @@
+[submodule "asylum-cores"]
+	path = asylum-cores
+	url = git@github.com:deuskane/asylum-cores.git
+[submodule "asylum-communication-spi"]
+	path = asylum-communication-spi
+	url = git@github.com:deuskane/asylum-communication-spi.git
+[submodule "asylum-communication-uart"]
+	path = asylum-communication-uart
+	url = git@github.com:deuskane/asylum-communication-uart.git
+[submodule "asylum-component-clock_divider"]
+	path = asylum-component-clock_divider
+	url = git@github.com:deuskane/asylum-component-clock_divider.git
+[submodule "asylum-component-crc"]
+	path = asylum-component-crc
+	url = git@github.com:deuskane/asylum-component-crc.git
+[submodule "asylum-component-fifo"]
+	path = asylum-component-fifo
+	url = git@github.com:deuskane/asylum-component-fifo.git
+[submodule "asylum-component-gpio"]
+	path = asylum-component-gpio
+	url = git@github.com:deuskane/asylum-component-gpio.git
+[submodule "asylum-component-ram"]
+	path = asylum-component-ram
+	url = git@github.com:deuskane/asylum-component-ram.git
+[submodule "asylum-component-stack"]
+	path = asylum-component-stack
+	url = git@github.com:deuskane/asylum-component-stack.git
+[submodule "asylum-component-timer"]
+	path = asylum-component-timer
+	url = git@github.com:deuskane/asylum-component-timer.git
+[submodule "asylum-infrastructure_icn"]
+	path = asylum-infrastructure_icn
+	url = git@github.com:deuskane/asylum-infrastructure_icn.git
+[submodule "asylum-processor-OpenBlaze8"]
+	path = asylum-processor-OpenBlaze8
+	url = git@github.com:deuskane/asylum-processor-OpenBlaze8.git
+[submodule "asylum-soc-picosoc"]
+	path = asylum-soc-picosoc
+	url = git@github.com:deuskane/asylum-soc-picosoc.git
+[submodule "asylum-system-gic"]
+	path = asylum-system-gic
+	url = git@github.com:deuskane/asylum-system-gic.git
+[submodule "asylum-target-techmap"]
+	path = asylum-target-techmap
+	url = git@github.com:deuskane/asylum-target-techmap.git
+[submodule "asylum-utils-generators"]
+	path = asylum-utils-generators
+	url = git@github.com:deuskane/asylum-utils-generators.git
+[submodule "asylum-utils-pkg"]
+	path = asylum-utils-pkg
+	url = git@github.com:deuskane/asylum-utils-pkg.git
+[submodule "asylum-processor-WardRV"]
+	path = asylum-processor-WardRV
+	url = git@github.com:deuskane/asylum-processor-WardRV.git
+[submodule "asylum-system-mailbox"]
+	path = asylum-system-mailbox
+	url = git@github.com:deuskane/asylum-system-mailbox.git
+[submodule "asylum-system-spinlock"]
+	path = asylum-system-spinlock
+	url = git@github.com:deuskane/asylum-system-spinlock.git
