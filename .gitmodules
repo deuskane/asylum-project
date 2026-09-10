@@ -58,3 +58,9 @@
 [submodule "asylum-system-spinlock"]
 	path = ip/asylum-system-spinlock
 	url = git@github.com:deuskane/asylum-system-spinlock.git
+[submodule "ip/xilinx-primitive-unisim"]
+	path = ip/xilinx-primitive-unisim
+	url = git@github.com:deuskane/xilinx-primitive-unisim.git
+[submodule "ip/xilinx-processor-kcpsm3"]
+	path = ip/xilinx-processor-kcpsm3
+	url = git@github.com:deuskane/xilinx-processor-kcpsm3.git
