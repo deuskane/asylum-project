@@ -43,17 +43,22 @@ NONREG_LISTS     := $(filter-out $(NONREG_EXCLUDE), $(NONREG_LISTS_ALL))
 #--------------------------------------------------------
 .PHONY : help
 help :
-	@echo "==============| Variables"
+	@echo "================| Variables"
 	@echo "NONREG_EXCLUDE  : Elements excluded in the non-regression pass"
 	@for item in $(NONREG_EXCLUDE); do \
-	 echo "                  * $${item}"; \
+	 echo "                  - $${item}"; \
 	 done
-	@echo "NONREG_LISTS    : Elements included in the non-regression pass"
-	@for item in $(NONREG_LISTS); do \
-	 echo "                  * $${item}"; \
+	@echo "NONREG_LISTS_ALL: Elements included in the non-regression pass"
+	@echo "                  (Only elements prefixed with + are in NONREG_LISTS)"
+	@for item in $(NONREG_LISTS_ALL); do \
+	 if echo "$(NONREG_LISTS)" | grep -qw "$$item"; then \
+	 	 echo "                  + $${item}"; \
+	 else \
+	 	 echo "                  - $${item}"; \
+	 fi; \
 	 done
 	@echo ""
-	@echo "==============| Rules"
+	@echo "================| Rules"
 	@echo "help            : Print this message"
 	@echo "component       : Generate VHDL component packages for all IPs"
 	@echo "import_dry_run  : Dry-run the FuseSoC library import"
@@ -127,7 +132,6 @@ $(addprefix nonreg_,$(NONREG_LISTS)) :
 	echo "Run regression"; \
 	echo "--------------------------------------------------------"; \
 	$(MAKE) nonreg
-
 
 #--------------------------------------------------------
 # clean
