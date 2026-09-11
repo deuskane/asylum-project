@@ -31,7 +31,8 @@ NONREG_EXCLUDE   += asylum-processor-OpenBlaze8
 NONREG_EXCLUDE   += asylum-processor-WardRV
 
 # NONREG_LISTS contains the directories with a Makefile that are included in the non-regression pass.
-NONREG_LISTS     := $(filter-out $(NONREG_EXCLUDE), $(patsubst %/,%,$(patsubst $(DIR_IP)/%,%,$(sort $(dir $(wildcard $(DIR_IP)/*/Makefile))))))
+NONREG_LISTS_ALL := $(patsubst %/,%,$(patsubst $(DIR_IP)/%,%,$(sort $(dir $(wildcard $(DIR_IP)/*/Makefile)))))
+NONREG_LISTS     := $(filter-out $(NONREG_EXCLUDE), $(NONREG_LISTS_ALL))
 #=============================================================================
 # Rules
 #=============================================================================
@@ -58,6 +59,8 @@ help :
 	@echo "import_dry_run  : Dry-run the FuseSoC library import"
 	@echo "import          : Import / refresh FuseSoC cores into the local library"
 	@echo "nonreg          : Run non regression campaign depending the NONREG_LIST variable"
+	@echo "clean           : Run clean depending the NONREG_LIST_ALL variable"
+
 #--------------------------------------------------------
 # component
 #--------------------------------------------------------
@@ -124,3 +127,15 @@ $(addprefix nonreg_,$(NONREG_LISTS)) :
 	echo "Run regression"; \
 	echo "--------------------------------------------------------"; \
 	$(MAKE) nonreg
+
+
+#--------------------------------------------------------
+# clean
+#--------------------------------------------------------
+.PHONY : clean
+clean : $(addprefix clean_,$(NONREG_LISTS_ALL))
+
+$(addprefix clean_,$(NONREG_LISTS_ALL)) :
+	@\
+	cd "$(subst clean_,$(DIR_IP)/,$@)"; \
+	$(MAKE) clean
