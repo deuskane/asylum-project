@@ -113,7 +113,7 @@ import :
 .PHONY : nonreg
 nonreg : $(addprefix nonreg_,$(NONREG_LISTS))
 
-$(addprefix nonreg_,$(NONREG_LISTS)) :
+$(addprefix nonreg_,$(NONREG_LISTS_ALL)) :
 	@\
 	cd "$(subst nonreg_,$(DIR_IP)/,$@)"; \
 	echo "--------------------------------------------------------"; \
