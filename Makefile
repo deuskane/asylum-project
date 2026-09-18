@@ -64,6 +64,7 @@ help :
 	@echo "import_dry_run  : Dry-run the FuseSoC library import"
 	@echo "import          : Import / refresh FuseSoC cores into the local library"
 	@echo "nonreg          : Run non regression campaign depending the NONREG_LIST variable"
+	@echo "nonreg_all      : Run non regression campaign depending the NONREG_LIST_ALL variable"
 	@echo "clean           : Run clean depending the NONREG_LIST_ALL variable"
 
 #--------------------------------------------------------
@@ -113,6 +114,15 @@ import :
 .PHONY : nonreg
 nonreg : $(addprefix nonreg_,$(NONREG_LISTS))
 
+#--------------------------------------------------------
+# nonreg_all
+#--------------------------------------------------------
+.PHONY : nonreg_all
+nonreg_all : $(addprefix nonreg_,$(NONREG_LISTS_ALL))
+
+#--------------------------------------------------------
+# Individual nonregression target
+#--------------------------------------------------------
 $(addprefix nonreg_,$(NONREG_LISTS_ALL)) :
 	@\
 	cd "$(subst nonreg_,$(DIR_IP)/,$@)"; \
@@ -127,7 +137,7 @@ $(addprefix nonreg_,$(NONREG_LISTS_ALL)) :
 	echo "--------------------------------------------------------"; \
 	echo "Add fusesoc library $(DIR_IP)"; \
 	echo "--------------------------------------------------------"; \
-    fusesoc library add ip  $(DIR_IP); \
+	fusesoc library add ip  $(DIR_IP); \
 	echo "--------------------------------------------------------"; \
 	echo "Run regression"; \
 	echo "--------------------------------------------------------"; \
