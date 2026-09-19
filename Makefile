@@ -104,9 +104,9 @@ import_dry_run:
 .PHONY : import
 import :
 	$(CORE_IMPORT) -s $(DIR_IP) -d $(DIR_LIB) -r
-	cd $(DIR_LIB) && ./dump.sh)
-	cd $(DIR_LIB) && git add *)
-	cd $(DIR_LIB) && git commit -am "Update Cores");
+	cd $(DIR_LIB); ./dump.sh
+	cd $(DIR_LIB); git add *
+	cd $(DIR_LIB); git commit -am "Update Cores";
 
 #--------------------------------------------------------
 # nonreg
