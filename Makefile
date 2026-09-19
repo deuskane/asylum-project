@@ -89,7 +89,7 @@ component :
 	(cd $(DIR_IP)/asylum-system-mailbox/hdl/                ; $(GEN_COMPONENT) mailbox_pkg         --vhdl_path .)
 	(cd $(DIR_IP)/asylum-utils-generators/tools/regtool/hdl ; $(GEN_COMPONENT) csr_pkg             --vhdl_path .)
 	(cd $(DIR_IP)/asylum-utils-pkg/hdl                      ; $(GEN_COMPONENT) ft_pkg              --vhdl_path . --file_filter "ft_*")
-	(cd $(DIR_IP)/asylum-target-techmap/hdl/generic         ; $(GEN_COMPONENT) techmap_pkg         --vhdl_path .)
+	(cd $(DIR_IP)/asylum-target-techmap/hdl/generic         ; $(GEN_COMPONENT) techmap_pkg         --vhdl_path . --package_path ../common)
 
 #--------------------------------------------------------
 # import_dry_run
