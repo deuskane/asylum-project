@@ -64,3 +64,6 @@
 [submodule "ip/xilinx-processor-kcpsm3"]
 	path = ip/xilinx-processor-kcpsm3
 	url = git@github.com:deuskane/xilinx-processor-kcpsm3.git
+[submodule "infra/asylum-ci"]
+	path = infra/asylum-ci
+	url = git@github.com:deuskane/asylum-ci.git
