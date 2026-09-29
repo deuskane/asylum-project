@@ -124,24 +124,7 @@ nonreg_all : $(addprefix nonreg_,$(NONREG_LISTS_ALL))
 # Individual nonregression target
 #--------------------------------------------------------
 $(addprefix nonreg_,$(NONREG_LISTS_ALL)) :
-	@\
-	cd "$(subst nonreg_,$(DIR_IP)/,$@)"; \
-	echo "--------------------------------------------------------"; \
-	echo "Remove previous fusesoc.conf"; \
-	echo "--------------------------------------------------------"; \
-	rm -f fusesoc.conf; \
-	echo "--------------------------------------------------------"; \
-	echo "Add fusesoc library $(DIR_LIB)"; \
-	echo "--------------------------------------------------------"; \
-	fusesoc library add lib $(DIR_LIB); \
-	echo "--------------------------------------------------------"; \
-	echo "Add fusesoc library $(DIR_IP)"; \
-	echo "--------------------------------------------------------"; \
-	fusesoc library add ip  $(DIR_IP); \
-	echo "--------------------------------------------------------"; \
-	echo "Run regression"; \
-	echo "--------------------------------------------------------"; \
-	$(MAKE) nonreg
+	+$(MAKE) -C $(subst nonreg_,$(DIR_IP)/,$@) nonreg
 
 #--------------------------------------------------------
 # clean
