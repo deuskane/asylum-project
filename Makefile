@@ -107,6 +107,7 @@ import :
 	cd $(DIR_LIB); ./dump.sh
 	cd $(DIR_LIB); git add *
 	cd $(DIR_LIB); git commit -am "Update Cores";
+	cd $(DIR_LIB); git push
 
 #--------------------------------------------------------
 # nonreg
