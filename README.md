@@ -25,3 +25,38 @@
 | [asylum-utils-pkg](https://github.com/deuskane/asylum-utils-pkg) | [![CI](https://github.com/deuskane/asylum-utils-pkg/actions/workflows/ci.yml/badge.svg)](https://github.com/deuskane/asylum-utils-pkg/actions/workflows/ci.yml) |
 | [xilinx-primitive-unisim](https://github.com/deuskane/xilinx-primitive-unisim) | [![no CI](https://img.shields.io/badge/CI-no%20workflow-lightgrey)](https://github.com/deuskane/asylum-project) |
 | [xilinx-processor-kcpsm3](https://github.com/deuskane/xilinx-processor-kcpsm3) | [![no CI](https://img.shields.io/badge/CI-no%20workflow-lightgrey)](https://github.com/deuskane/asylum-project) |
+
+## Getting the sources
+
+The submodules use SSH URLs (`git@github.com:...`).
+
+### With SSH access to GitHub
+
+```sh
+git clone --recurse-submodules git@github.com:deuskane/asylum-project.git
+```
+
+### Without SSH access (e.g. behind a firewall)
+
+Clone over HTTPS. Git rewrites the submodule URLs to HTTPS, but only for this command:
+
+```sh
+git -c url."https://github.com/".insteadOf="git@github.com:" \
+    clone --recurse-submodules https://github.com/deuskane/asylum-project.git
+```
+
+To make the rewrite permanent, so later `git submodule update` and `git pull` also go over HTTPS:
+
+```sh
+git config --global url."https://github.com/".insteadOf "git@github.com:"
+```
+
+> Note: pushing over HTTPS requires a GitHub personal access token instead of an SSH key.
+
+### Already cloned without submodules?
+
+```sh
+git submodule update --init --recursive
+```
+
+
