@@ -67,3 +67,12 @@
 [submodule "infra/asylum-ci"]
 	path = infra/asylum-ci
 	url = git@github.com:deuskane/asylum-ci.git
+[submodule "ip/asylum-communication-i2c"]
+	path = ip/asylum-communication-i2c
+	url = git@github.com:deuskane/asylum-communication-i2c.git
+[submodule "ip/asylum-component-pwm"]
+	path = ip/asylum-component-pwm
+	url = git@github.com:deuskane/asylum-component-pwm.git
+[submodule "ip/asylum-debug-hwla"]
+	path = ip/asylum-debug-hwla
+	url = git@github.com:deuskane/asylum-debug-hwla.git
