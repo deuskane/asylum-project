@@ -137,8 +137,9 @@ own core. The README of each IP shows how to instantiate it.
 ```sh
 cd ip/asylum-communication-spi
 make help             # variables, rules and targets
-make sim_basic        # one target, log in log/
+make sim_basic_dual   # one scenario (dual SPI), log in log/
 make nonreg_sim       # every sim_* target
+make nonreg_syn       # synthesis: Artix-7 LUT / FF and sky130 area
 ```
 
 The CI runs the same `make <target>` in the image `ghcr.io/deuskane/asylum-env`
