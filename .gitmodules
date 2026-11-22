@@ -79,3 +79,6 @@
 [submodule "ip/asylum-verification-uvvm"]
 	path = ip/asylum-verification-uvvm
 	url = git@github.com:deuskane/asylum-verification-uvvm.git
+[submodule "ip/asylum-debug-jtag"]
+	path = ip/asylum-debug-jtag
+	url = git@github.com:deuskane/asylum-debug-jtag.git
