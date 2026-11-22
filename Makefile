@@ -24,6 +24,8 @@ DIR_LIB          = $(CURDIR)/lib/asylum-cores
 
 GEN_COMPONENT    = python $(DIR_IP)/asylum-utils-generators/scripts/component.py
 CORE_IMPORT      = $(DIR_LIB)/import.sh
+# make import DIR_IMPORT=ip/<repo> : import only this IP (default : every IP)
+DIR_IMPORT      ?= $(DIR_IP)
 
 NONREG_EXCLUDE   :=
 NONREG_EXCLUDE   += asylum-soc-picosoc
@@ -96,14 +98,14 @@ component :
 #--------------------------------------------------------
 .PHONY : import_dry_run
 import_dry_run:
-	$(CORE_IMPORT) -s $(DIR_IP) -d $(DIR_LIB)
+	$(CORE_IMPORT) -s $(DIR_IMPORT) -d $(DIR_LIB)
 
 #--------------------------------------------------------
 # import
 #--------------------------------------------------------
 .PHONY : import
 import :
-	$(CORE_IMPORT) -s $(DIR_IP) -d $(DIR_LIB) -r
+	$(CORE_IMPORT) -s $(DIR_IMPORT) -d $(DIR_LIB) -r
 	cd $(DIR_LIB); ./dump.sh
 	cd $(DIR_LIB); git add *
 	cd $(DIR_LIB); git commit -am "Update Cores";
