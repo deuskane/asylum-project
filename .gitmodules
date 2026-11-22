@@ -76,3 +76,6 @@
 [submodule "ip/asylum-debug-hwla"]
 	path = ip/asylum-debug-hwla
 	url = git@github.com:deuskane/asylum-debug-hwla.git
+[submodule "ip/asylum-verification-uvvm"]
+	path = ip/asylum-verification-uvvm
+	url = git@github.com:deuskane/asylum-verification-uvvm.git
